@@ -2,10 +2,10 @@ import math
 import numpy as np
 def menu():
     print("1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar um valor específico do sistema\n10-Sair\n")
-    x = int(input("escolha uma opção:"))():
+    x = int(input("escolha uma opção:"))
     return x
 def confirmar():
-    x = input("\nDeseja desfazer ultima alteração?(s/n)")():
+    x = input("\nDeseja desfazer ultima alteração?(s/n)")
     if x == "s":
         return 1
     else:
