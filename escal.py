@@ -107,7 +107,7 @@ def main():
             i=selectLine(A,"Selecione a linha a zerar:")
             x=selectLine(A,"Selecione a linha do pivô:")
             z = 0
-            while A[x][z] != 1 and z < len(A):
+            while z < len(A) and A[x][z] != 1:
                 z += 1
             if z == len(A):
                 print("Não há pivô(precisa ser 1)")
