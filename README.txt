@@ -8,7 +8,7 @@ ENGLISH MENU:
 5-Swap collumns
 6-Show system
 7-Show registry of swap's in collumns
-9-Change a especific value in system
+9-Change system
 10-Exit
 ##
 To insert data, you will need to use a ',' to separate elements in the line like a, b, c and a ';' to separate lines, like a, b, c;d, e, f; g,h,i

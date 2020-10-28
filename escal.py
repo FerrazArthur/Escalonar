@@ -1,7 +1,7 @@
 import math
 import numpy as np
 def menu():
-    print("1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar um valor específico do sistema\n10-Sair\n")
+    print("1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar sistema\n10-Sair\n")
     x = int(input("escolha uma opção:"))
     return x
 def confirmar():
@@ -40,7 +40,7 @@ def printar(A, b):
             print("{0:15}".format(A[i][j]), end = ' ')
         print("|{:15}".format(b[i]))
     print()
-def main():
+def getSys():
     A = input("## use virgula para separar os elementos em uma mesma linha, ';' para separar uma linha de outra\nInsira a matriz A:\n")
     b = input("Insira a matriz b:\n")
     A = toMat(A)
@@ -48,14 +48,21 @@ def main():
     if EQuadrada(A):
         if len(b) != len(A):
             print("Sistema incompatível")
-            return
+            return None, None
     else:
         print("Sistema não é quadrado")
+        return None, None
+    return A, b
+def main():
+    A, b = getSys()
+    if A is None or b is None:
         return
     printar(A, b)
     regis=""
     print("#Dica de uso: escolha opção 2 pra primeira linha, em seguida a opção 4 usando todas as outras linhas\n#Escolha novamente a opção 2 e agora a segunda linha, depois use a opção 4 novamente pra todas as linhas\n#Repita esse processo até o fim do sistema e ele estará triagularizado\n")
     while 1:
+        if A is None or b is None:
+            return
         op = menu()
         redo = 0
         Abkp = np.copy(A).tolist()
@@ -150,10 +157,16 @@ def main():
         if op == 8:
             print(regis)
         if op == 9:
-            i = selectLine(A,"Selecione a linha:")
-            j = selectLine(A,"Selecione a coluna")
-            x = float(input("novo valor:"))
-            A[i][j] = x
+            op = int(input("1-Inserir novo sistema \n2-Alterar apenas um valor\nescolha uma opção:"))
+            if op == 1:
+                A, b = getSys()
+            elif op == 2:
+                i = selectLine(A,"Selecione a linha:")
+                j = selectLine(A,"Selecione a coluna")
+                x = float(input("novo valor:"))
+                A[i][j] = x
+            else:
+                print("Opção não reconhecida")
         if op == 10:
             return
         if op < 1 or op > 10:
