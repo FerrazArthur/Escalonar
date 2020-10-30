@@ -1,7 +1,5 @@
 # inserção de dados:
 ## -----exemplo----
-## ----fim----
-## -----exemplo----
 
 Insira a matriz A:
 4, 23, 12, 32;-43, 2, 53, 3;-4, -2, -1, 2;42, 32,-4,12
@@ -13,13 +11,13 @@ linha  2               -43.0                  2.0                 53.0          
 linha  3                -4.0                 -2.0                 -1.0                  2.0 |               -45.0
 linha  4                42.0                 32.0                 -4.0                 12.0 |                32.0
 
-##----fim----
+## ----fim----
 
-#Resolução do sistema:
+# Resolução do sistema:
 
-#Primeiro passo: Transformar primeiro elemento não zero da linha 1 em pivo unitário
+# Primeiro passo: Transformar primeiro elemento não zero da linha 1 em pivo unitário
 
-##-----exemplo----
+## -----exemplo----
 
 escolha uma opção: 2
 
@@ -37,11 +35,11 @@ linha  4                42.0                 32.0                 -4.0          
 
 Valor da linha 1 e coluna 1 foi multiplicada pelo seu inverso
 
-##----fim----
+## ----fim----
 
-#Segundo passo: zerar todos os elementos na coluna onde o pivô esta: Para isso utilizaremos a opção 4:
+# Segundo passo: zerar todos os elementos na coluna onde o pivô esta: Para isso utilizaremos a opção 4:
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:2
 Selecione a linha do pivô:1
@@ -53,11 +51,11 @@ linha  4                42.0                 32.0                 -4.0          
 
 Os elementos da linha 2 fram substraidos pelo valor que havia na linha 2 e coluna 1
 
-##----fim----
+## ----fim----
 
-#repita o processo para as demais linhas:
+# Repita o processo para as demais linhas:
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:3
 Selecione a linha do pivô:1
@@ -69,8 +67,8 @@ linha  4                42.0                 32.0                 -4.0          
 
 Os elementos da linha 3 fram substraidos pelo valor que havia na linha 3 e coluna 1
 
-##----fim----
-##-----exemplo----
+## ----fim----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:4
 Selecione a linha do pivô:1
@@ -82,11 +80,11 @@ linha  4                 0.0               -209.5               -130.0          
 
 Os elementos da linha 4 fram substraidos pelo valor que havia na linha 4 e coluna 1
 
-##----fim---
+## ----fim---
 
-#Repetimos o primeiro passo, agora na linha 2 
+# Repetimos o primeiro passo, agora na linha 2 
 
-##-----exemplo----
+## -----exemplo----
 
 escolha uma opção:2
 
@@ -104,11 +102,11 @@ linha  4                 0.0               -209.5               -130.0          
 
 Valor da linha 2 e coluna 2 foi multiplicada pelo seu inverso
 
-##----fim----
+## ----fim----
 
-#Repetiremos o segundo passo para as demais linhas, desde que não sejam o pivo atual:
+# Repetiremos o segundo passo para as demais linhas, desde que não sejam o pivo atual:
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:1
 Selecione a linha do pivô:2
@@ -120,11 +118,11 @@ linha  4                 0.0               -209.5               -130.0          
 
 Os elementos da linha 1 fram substraidos pelo valor que havia na linha 1 e coluna 2
 
-##----fim----
+## ----fim----
 
-#Ao fim desse processo queremos que o sistema esteja dessa forma: 
+# Ao fim desse processo queremos que o sistema esteja dessa forma: 
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:4
 Selecione a linha do pivô:2
@@ -136,11 +134,11 @@ linha  4                 0.0                  0.0    22.97492477432297   -32.339
 
 Os elementos da linha 4 fram substraidos pelo valor que havia na linha 4 e coluna 2
 
-##----fim----
+## ----fim----
 
-#Então voltamos à opção 2 e agora procuramos um pivo na linha 3:
+# Então voltamos à opção 2 e agora procuramos um pivo na linha 3:
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha:3
 
@@ -151,11 +149,11 @@ linha  4                 0.0                  0.0    22.97492477432297   -32.339
 
 Valor da linha 3 e coluna 3 foi multiplicada pelo seu inverso
 
-##----fim----
+## ----fim----
 
-#Repetimos o segundo passo para todas as linhas, agora excluindo a linha 3(reparou que nunca usamos a opção 4 na linha com o pivo?)
+# Repetimos o segundo passo para todas as linhas, agora excluindo a linha 3(reparou que nunca usamos a opção 4 na linha com o pivo?)
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:4
 Selecione a linha do pivô:3
@@ -167,11 +165,11 @@ linha  4                 0.0                  0.0                  0.0   -7.0830
 
 Os elementos da linha 4 fram substraidos pelo valor que havia na linha 4 e coluna 3
 
-##----fim----
+## ----fim----
 
-#Agora uma ultima vez utilizaremos a opção 2 para tornar a linha 4 um pivo
+# Agora uma ultima vez utilizaremos a opção 2 para tornar a linha 4 um pivo
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha:4
 
@@ -182,11 +180,11 @@ linha  4                -0.0                 -0.0                 -0.0          
 
 Valor da linha 4 e coluna 4 foi multiplicada pelo seu inverso
 
-##----fim----
+## ----fim----
 
-#Repita o segundo passo agora usando como pivo a linha 4
+# Repita o segundo passo agora usando como pivo a linha 4
 
-##-----exemplo----
+## -----exemplo----
 
 Selecione a linha que deseja zerar:3
 Selecione a linha do pivô:4
@@ -198,7 +196,7 @@ linha  4                -0.0                 -0.0                 -0.0          
 
 Os elementos da linha 3 fram substraidos pelo valor que havia na linha 3 e coluna 4
 
-##----fim----
-#Conclusão:
+## ----fim----
+# Conclusão:
 Com o sistema linear nessa forma(1 na diagonal, zero no resto), podemos concluir que os valores após as barras laterais são, respectivamente, os valores de x1, x2, x3, ..., xn que satisfazem o sistema.
 nota: Caso tenha utilizado troca de colunas, não há garantias de que a ordem dos valores esteja correta, é preciso analisar o histórico para saber qual a ordem correta.
