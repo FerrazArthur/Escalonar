@@ -1,7 +1,7 @@
 import math
 import numpy as np
 def menu():
-    print("1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar sistema\n10-Sair\n")
+    print("\n1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar sistema\n10-Sair\n")
     x = int(input("escolha uma opção:"))
     return x
 def confirmar():
@@ -37,8 +37,8 @@ def printar(A, b):
     for i in range(len(A)):
         print("linha {0:2}".format(i+1), end = '')
         for j in range(len(A)):
-            print("{0:15}".format(A[i][j]), end = ' ')
-        print("|{:15}".format(b[i]))
+            print("{0:20}".format(A[i][j]), end = ' ')
+        print("|{:20}".format(b[i]))
     print()
 def getSys():
     A = input("## use virgula para separar os elementos em uma mesma linha, ';' para separar uma linha de outra\nInsira a matriz A:\n")
@@ -53,6 +53,23 @@ def getSys():
         print("Sistema não é quadrado")
         return None, None
     return A, b
+def MultiplyLine(A, b, n = '', i = ''):#multiplica linha por constante N
+    if n == '':
+        i = selectLine(A)
+        n=float(input("Selecione a constante:"))
+    for j in range(len(A)):
+        A[i][j] *= n
+    b[i] *= n
+    return A
+def SumLines(A, b, n = '', i = '', x = ''):
+    if n == '':
+        i=selectLine(A,"Selecione a linha a operar:")
+        x=selectLine(A,"Selecione a linha auxiliar:")
+        n=float(input("Insira a constante:"))
+    for j in range(len(A)):
+        A[i][j] += A[x][j]*n
+    b[i] += b[x]*n
+    return A
 def main():
     A, b = getSys()
     if A is None or b is None:
@@ -69,67 +86,54 @@ def main():
         bbkp = np.copy(b).tolist()
         if op == 1:
             printar(A, b)
-            i = selectLine(A)
-            n=float(input("Selecione a constante:"))
-            for j in range(len(A)):
-                A[i][j] *= n
-            b[i] *= n
+            A = MultiplyLine(A, b)
             printar(A, b)
             redo = confirmar()
         if op == 2:
             printar(A, b)
-            i = selectLine(A)
             x = 0
-            while A[i][x] == 0 and x < len(A):
+            i = selectLine(A)
+            while A[i][x] == 0 and x < len(A):#procurando o primeiro elemento não nulo da linha
                 x+=1
             if x == len(A):
                 print("linha nula nao pode ser pivo\n")
                 break
             n =  1/A[i][x]
-            for j in range(len(A)):
-                A[i][j] *= n
-            b[i] *= n
+            A = MultiplyLine(A, b, n, i)
             printar(A, b)
-            print("Valor da linha "+str(i+1)+" e coluna "+str(x)+" foi multiplicada pelo seu inverso")
+            print("Valor da linha "+str(i+1)+" e coluna "+str(x+1)+" foi multiplicada pelo seu inverso")
             redo = confirmar()
         if op == 3:
             printar(A, b)
-            i=selectLine(A,"Selecione a linha a operar:")
-            x=selectLine(A,"Selecione a linha auxiliar:")
-            n=float(input("Insira a constante:"))
-            for j in range(len(A)):
-                A[i][j] += A[x][j]*n
-            b[i] += b[x]*n
+            A = SumLines(A, b)
             printar(A, b)
             redo = confirmar()
         if op == 4:
             printar(A, b)
-            i=selectLine(A,"Selecione a linha a zerar:")
-            x=selectLine(A,"Selecione a linha do pivô:")
             z = 0
-            while z < len(A) and A[x][z] != 1:
+            i=selectLine(A,"Selecione a linha que deseja zerar:")
+            x=selectLine(A,"Selecione a linha do pivô:")
+            while z < len(A) and A[x][z] != 1:#procurando por posição do pivô
                 z += 1
             if z == len(A):
                 print("Não há pivô(precisa ser 1)")
                 break
-            n = A[i][z]
-            for j in range(len(A)):
-                A[i][j] -= A[x][j]*n
-            b[i] -= b[x]*n
+            n = -1*A[i][z]
+            A = SumLines(A, b, n, i, x)
             printar(A, b)
-            print("À linha "+str(i+1)+" foi substraido o valor que havia na linha "+str(i+1)+" e coluna "+str(z+1))
+            print("Os elementos da linha "+str(i+1)+" fram substraidos pelo valor que havia na linha "+str(i+1)+" e coluna "+str(z+1))
             redo = confirmar()
         if op == 5:
             printar(A, b)
             i=selectLine(A)
             j=selectLine(A, "Selecione outra linha:")
-            aux = np.copy(A[i]).tolist()
+            aux = np.copy(A[i]).tolist()#trocando linhas
             A[i] = A[j]
             A[j] = aux
             aux = b[i]
             b[i] = b[j]
-            b[j] = aux
-            print("As linhas selecionadas foram trocadas")
+            b[j] = aux#fim
+            print("\nAs linhas selecionadas foram trocadas")
             printar(A, b)
             redo = confirmar()
         if op == 6:
@@ -138,12 +142,12 @@ def main():
             i=selectLine(A,"Selecione uma coluna: ")
             j=selectLine(A,"Selecione outra coluna: ")
             aux = []
-            for x in range(len(A)):
+            for x in range(len(A)):#trocando colunas
                 aux.append(A[x][i])
                 A[x][i] = A[x][j]
-            for x in range(len(A)):
+            for x in range(len(A)):#fim
                 A[x][j] = aux[x]
-            print("As colunas selecionadas foram trocadas")
+            print("\nAs colunas selecionadas foram trocadas")
             printar(A, b)
             redo = confirmar()
             if redo == 0:
@@ -157,13 +161,13 @@ def main():
         if op == 8:
             print(regis)
         if op == 9:
-            op = int(input("1-Inserir novo sistema \n2-Alterar apenas um valor\nescolha uma opção:"))
+            op = int(input("\n1-Inserir novo sistema \n2-Alterar apenas um valor\nescolha uma opção:"))
             if op == 1:
                 A, b = getSys()
             elif op == 2:
                 i = selectLine(A,"Selecione a linha:")
                 j = selectLine(A,"Selecione a coluna")
-                x = float(input("novo valor:"))
+                x = float(input("\nnovo valor:"))
                 A[i][j] = x
             else:
                 print("Opção não reconhecida")
