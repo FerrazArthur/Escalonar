@@ -21,7 +21,7 @@
     g h i
 
 ## Easiest way to use:
-<p>For each line, use option '2' do define a 'pivo' then use option '4' in all other lines to reduze the collumns bellow 'pivo' to zero;</p>
+<p>For each line, use option '2' to define a 'pivo' then use option '4' in all other lines to reduze the collumns bellow 'pivo' to zero;</p>
 <p>Repeat this processes line by line until you reach the end</p>
 <p>Once done, you'll have a identity matriz as 'A' and the 'b' matriz(vector) is going to be the 'x' values to this system.</p>
 <p>Note: when you use 'swap collumns', you must keep in mind that you also swap the 'x' order. So i wrote a register of collumns change.</p>
