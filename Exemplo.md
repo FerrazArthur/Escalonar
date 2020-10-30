@@ -1,7 +1,7 @@
-#inserção de dados:
-##-----exemplo----
-##----fim----
-##-----exemplo----
+# inserção de dados:
+## -----exemplo----
+## ----fim----
+## -----exemplo----
 
 Insira a matriz A:
 4, 23, 12, 32;-43, 2, 53, 3;-4, -2, -1, 2;42, 32,-4,12
