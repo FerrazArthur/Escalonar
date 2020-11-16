@@ -1,4 +1,4 @@
-### Fell free to use as you want and if you add some new utilities, make sure to  so i can get it too! 
+### Fell free to use as you want and to send me your feedback! 
 ## ENGLISH MENU:
     1-Multiply line by constant
     2-Transform first element non 0 of line into pivot
