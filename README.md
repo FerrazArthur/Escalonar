@@ -21,13 +21,13 @@
     d e f
     g h i
 
-##(EN)Quick advise in how to use:
+## (EN)Quick advise in how to use:
 <p>For each line in order, use option '2' to define a pivot then use option '4' in all other lines to reduze the collumns bellow pivot to zero;</p>
 <p>Repeat this processes line by line until you reach the end</p>
 <p>Once done, you'll have a identity matriz 'A' and the other matriz(vector) is going to be the 'x' values to satisfy this system.</p>
 <p>Note: when you use 'swap collumns', you must keep in mind that you also swap 'b' and 'x' order. So i wrote a register of collumns change.</p>
 <p>Note, THIS CODE IS FOR LINEAR SISTEMS like 'Ax=b' so A MUST be NxN(square matriz) and 'b' must be a single line with N elements.</p>
-##(PT)Como escalonar a matriz passo a passo:
+## (PT)Como escalonar a matriz passo a passo:
 <p>Para cada linha(começe em ordem), utilize a opção '2' para definir um pivo, então use a opção 4 nas demais linhas para zerar as colunas abaixo do pivo<\p>
 <p>Repita esse processo a cada linha subsequente<\p>
 <p>Ao fim desse processo, você terá uma matriz identidade 'A' e uma matriz com os coeficientes do vetor 'x'( em 'Ax = b') que satisfaça o sistema<\p>
