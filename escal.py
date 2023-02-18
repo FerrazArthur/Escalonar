@@ -48,11 +48,6 @@ def printar(A, b):
     table=np.append(table, np.transpose(np.column_stack(b)), axis=1)
 
     print('\n'+tab(table,headers=heads, tablefmt='heavy_grid'))
-#    for i in range(np.size(A, 0)):
-#        print("linha {0:2}".format(i+1), end = '')
-#        for j in range(np.size(A, 1)):
-#            print("{0:20}".format(A[i][j]), end = ' ')
-#        print("|{:20}".format(b[i]))
     print()
 
 def getSys():
