@@ -36,6 +36,6 @@
 <p>Nota: Esse algoritmo é para sistemas lineares na forma 'Ax=b', Então é preciso que A seja uma matriz quadrada(NxN) e 'b' precisa ser uma matriz linha com N elementos.</p>
 
 ##
-<p>Arthur Ferraz</p>
 <p>to send your feedback, contact me on
 arthursnc@gmail.com</p>
+<p>Arthur Ferraz</p>
