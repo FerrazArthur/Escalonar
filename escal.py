@@ -34,20 +34,17 @@ def EQuadrada(A):
             return False
     return True
 
-def printar(A, b):
+def printar(A, b, X):
     #preparando a tabela
     linhas=[]
-    heads = []
     for i in range(1,np.size(A, 0)+1):
         linhas.append('Linha '+'{0:2}'.format(i))
-        heads.append('X{0:02}'.format(i))
-    heads.append('Constantes')
     #adicionando nome das linhas à tabela
     table=np.append(np.transpose(np.column_stack(linhas)), A, axis=1)
     #adicionando matriz de coeficientes à tabela
     table=np.append(table, np.transpose(np.column_stack(b)), axis=1)
 
-    print('\n'+tab(table,headers=heads, tablefmt='heavy_grid'))
+    print('\n'+tab(table,headers=X, tablefmt='heavy_grid'))
     print()
 
 def getSys():
@@ -82,9 +79,13 @@ def SumLines(A, b, n = '', i = '', x = ''):
     return A
 def main():
     A, b = getSys()
+    X = []
     if A is None or b is None:
         return
-    printar(A, b)
+    for i in range(1, np.size(A, 0)+1):
+        X.append('X{0:02}'.format(i))
+    X.append('Constantes')
+    printar(A, b, X)
     regis=""
     print("#Dica de uso: escolha opção 2 pra primeira linha, em seguida a opção 4 usando todas as outras linhas\n#Escolha novamente a opção 2 e agora a segunda linha, depois use a opção 4 novamente pra todas as linhas\n#Repita esse processo até o fim do sistema e ele estará triagularizado\n")
     while 1:
@@ -94,13 +95,14 @@ def main():
         redo = 0
         Abkp = np.copy(A).tolist()
         bbkp = np.copy(b).tolist()
+        xbkp = np.copy(X).tolist()
         if op == 1:
-            printar(A, b)
+            printar(A, b, X)
             A = MultiplyLine(A, b)
-            printar(A, b)
+            printar(A, b, X)
             redo = confirmar()
         if op == 2:
-            printar(A, b)
+            printar(A, b, X)
             x = 0
             i = selectLine(A)
             while A[i][x] == 0 and x < len(A):#procurando o primeiro elemento não nulo da linha
@@ -110,16 +112,16 @@ def main():
                 break
             n =  1/A[i][x]
             A = MultiplyLine(A, b, n, i)
-            printar(A, b)
+            printar(A, b, X)
             print("Valores da linha "+str(i+1)+" foram multiplicados pelo inverso do  valor na coluna "+str(x+1))
             redo = confirmar()
         if op == 3:
-            printar(A, b)
+            printar(A, b, X)
             A = SumLines(A, b)
-            printar(A, b)
+            printar(A, b, X)
             redo = confirmar()
         if op == 4:
-            printar(A, b)
+            printar(A, b, X)
             z = 0
             i=selectLine(A,"Selecione a linha que deseja zerar:")
             x=selectLine(A,"Selecione a linha do pivô:")
@@ -130,11 +132,11 @@ def main():
                 break
             n = -1*A[i][z]
             A = SumLines(A, b, n, i, x)
-            printar(A, b)
+            printar(A, b, X)
             print("Os elementos da linha "+str(i+1)+" fram substraidos pelo valor que havia na linha "+str(i+1)+" e coluna "+str(z+1))
             redo = confirmar()
         if op == 5:
-            printar(A, b)
+            printar(A, b, X)
             i=selectLine(A)
             j=selectLine(A, "Selecione outra linha:")
             aux = np.copy(A[i]).tolist()#trocando linhas
@@ -144,29 +146,34 @@ def main():
             b[i] = b[j]
             b[j] = aux#fim
             print("\nAs linhas selecionadas foram trocadas")
-            printar(A, b)
+            printar(A, b, X)
             redo = confirmar()
         if op == 6:
-            print("## atenção! após utilizar essa opção, verifique o registro de troca de colunas pois a ordem dos coeficientes é alterada")
-            printar(A, b)
+            #print("## atenção! após utilizar essa opção, verifique o registro de troca de colunas pois a ordem dos coeficientes é alterada")
+            printar(A, b, X)
             i=selectLine(A,"Selecione uma coluna: ")
             j=selectLine(A,"Selecione outra coluna: ")
             aux = []
+            #atualizando a ordem do vetor das variáveis
+            auxx = X[j]
+            X[j] = X[i]
+            X[i] = auxx
             for x in range(len(A)):#trocando colunas
                 aux.append(A[x][i])
                 A[x][i] = A[x][j]
             for x in range(len(A)):#fim
                 A[x][j] = aux[x]
             print("\nAs colunas selecionadas foram trocadas")
-            printar(A, b)
+            printar(A, b, X)
             redo = confirmar()
             if redo == 0:
                 regis += "as colunas "+str(i+1)+" e "+str(j+1)+" foram trocadas\n"
         if redo == 1:
             A = Abkp
             b = bbkp
+            x = xbkp
         if op == 7:
-            printar(A, b)
+            printar(A, b, X)
             print(regis)
         if op == 8:
             print(regis)
