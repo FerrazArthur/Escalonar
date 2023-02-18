@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from tabulate import tabulate as tab
 def menu():
     print("\n1-Multiplicar linha por constante\n2-Transformar primeiro elemento não zero da linha em pivo unitário\n3-Somar linha à multiplo de outra linha\n4-Utilizar pivo unitário em uma linha\n5-Trocar linhas\n6-Trocar colunas\n7-Printar sistema\n8-Printar registro de alteração de colunas\n9-Alterar sistema\n10-Sair\n")
     x = int(input("escolha uma opção:"))
@@ -32,14 +33,23 @@ def EQuadrada(A):
         if len(A[i]) != len(A):
             return False
     return True
+
 def printar(A, b):
+    #preparando a tabela
+    linhas=[]
+    heads = []
+    for i in range(1,np.size(A, 0)+1):
+        linhas.append('Linha '+'{0:2}'.format(i))
+        heads.append('X{0:02}'.format(i))
+    heads.append('Constantes')
+    #adicionando nome das linhas à tabela
+    table=np.append(np.transpose(np.column_stack(linhas)), A, axis=1)
+    #adicionando matriz de coeficientes à tabela
+    table=np.append(table, np.transpose(np.column_stack(b)), axis=1)
+
+    print('\n'+tab(table,headers=heads, tablefmt='heavy_grid'))
     print()
-    for i in range(len(A)):
-        print("linha {0:2}".format(i+1), end = '')
-        for j in range(len(A)):
-            print("{0:20}".format(A[i][j]), end = ' ')
-        print("|{:20}".format(b[i]))
-    print()
+
 def getSys():
     A = input("## use virgula para separar os elementos em uma mesma linha, ';' para separar uma linha de outra\nInsira a matriz A:\n")
     b = input("Insira a matriz b:\n")
