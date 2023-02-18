@@ -34,6 +34,8 @@
 <p>Ao fim desse processo, você terá uma matriz identidade 'A' e uma matriz com os coeficientes do vetor 'x'( em 'Ax = b') que satisfaça o sistema</p>
 <p>Nota: Ao utilizar a opção para trocar colunas, você também estará trocando a ordem dos coeficientes nas matrizes 'b' e 'x'</p>
 <p>Nota: Esse algoritmo é para sistemas lineares na forma 'Ax=b', Então é preciso que A seja uma matriz quadrada(NxN) e 'b' precisa ser uma matriz linha com N elementos.</p>
+
+##
 <p>Arthur Ferraz</p>
 <p>to send your feedback, contact me on
 arthursnc@gmail.com</p>
