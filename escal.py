@@ -6,8 +6,8 @@ def menu():
     x = int(input("escolha uma opção:"))
     return x
 def confirmar():
-    x = input("\nDeseja desfazer ultima alteração?(s/n)")
-    if x == "s":
+    x = input("\nCaso deseje desfazer a ultima operação, insera 'r', caso contrário, insira qualquer outra letra:")
+    if x == 'r' or x == 'R':
         return 1
     else:
         return 0
