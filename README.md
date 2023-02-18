@@ -11,7 +11,7 @@
     10-Exit
 ##
 <p>To insert a matrix, use a ',' to separate elements by collumn and a ';' to separate the lines</p>
-<p>Para inserir a matriz, utilize ',' para separar elementos por colunas e ';' para separar as linhas<\p>
+<p>Para inserir a matriz, utilize ',' para separar elementos por colunas e ';' para separar as linhas</p>
 ## Example
 
     >a, b, c;d, e, f; g,h,i
@@ -29,11 +29,11 @@
 <p>Note, THIS CODE IS FOR LINEAR SISTEMS like 'Ax=b' so A MUST be NxN(square matriz) and 'b' must be a single line with N elements.</p>
     
 ## (PT)Como escalonar a matriz passo a passo:
-<p>Para cada linha(começe em ordem), utilize a opção '2' para definir um pivo, então use a opção 4 nas demais linhas para zerar as colunas abaixo do pivo<\p>
-<p>Repita esse processo a cada linha subsequente<\p>
-<p>Ao fim desse processo, você terá uma matriz identidade 'A' e uma matriz com os coeficientes do vetor 'x'( em 'Ax = b') que satisfaça o sistema<\p>
-<p>Nota: Ao utilizar a opção para trocar colunas, você também estará trocando a ordem dos coeficientes nas matrizes 'b' e 'x'<\p>
-<p>Nota: Esse algoritmo é para sistemas lineares na forma 'Ax=b', Então é preciso que A seja uma matriz quadrada(NxN) e 'b' precisa ser uma matriz linha com N elementos.<\p>
+<p>Para cada linha(começe em ordem), utilize a opção '2' para definir um pivo, então use a opção 4 nas demais linhas para zerar as colunas abaixo do pivo</p>
+<p>Repita esse processo a cada linha subsequente</p>
+<p>Ao fim desse processo, você terá uma matriz identidade 'A' e uma matriz com os coeficientes do vetor 'x'( em 'Ax = b') que satisfaça o sistema</p>
+<p>Nota: Ao utilizar a opção para trocar colunas, você também estará trocando a ordem dos coeficientes nas matrizes 'b' e 'x'</p>
+<p>Nota: Esse algoritmo é para sistemas lineares na forma 'Ax=b', Então é preciso que A seja uma matriz quadrada(NxN) e 'b' precisa ser uma matriz linha com N elementos.</p>
 <p>Arthur Ferraz</p>
 <p>to send your feedback, contact me on
 arthursnc@gmail.com</p>
