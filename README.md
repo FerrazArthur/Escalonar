@@ -10,22 +10,22 @@
     9-Change system
     10-Exit
 ##
-<p>To insert data, you will need to use a ',' to separate elements in the line like a, b, c and a ';' to separate lines</p>
+<p>To insert a matrix, use a ',' to separate elements by collumn and a ';' to separate the lines</p>
 ## Example
 
     >a, b, c;d, e, f; g,h,i
-<p>this will create a matriz</p>
+<p>this will create the following matriz</p>
 
     a b c
     d e f
     g h i
 
-## Easiest way to use:
-<p>For each line, use option '2' to define a 'pivo' then use option '4' in all other lines to reduze the collumns bellow 'pivo' to zero;</p>
+## Quick advise in how to use:
+<p>For each line, use option '2' to define a pivot then use option '4' in all other lines to reduze the collumns bellow pivot to zero;</p>
 <p>Repeat this processes line by line until you reach the end</p>
-<p>Once done, you'll have a identity matriz as 'A' and the 'b' matriz(vector) is going to be the 'x' values to this system.</p>
-<p>Note: when you use 'swap collumns', you must keep in mind that you also swap the 'x' order. So i wrote a register of collumns change.</p>
-<p>If you want to contribute to this proj., please do something to inform the currect order of x based on that! it'll be so cool...</p>
+<p>Once done, you'll have a identity matriz 'A' and a 'b' matriz(vector) is going to be the 'x' values to this system.</p>
+<p>Note: when you use 'swap collumns', you must keep in mind that you also swap b (the 'x' values) order. So i wrote a register of collumns change.</p>
+<p>If you want to contribute to this project, please do something to inform the currect order of x based on that! it'll great...</p>
 <p>Note, THIS CODE IS FOR LINEAR SISTEMS like Ax=b so A MUST be NxN(square matriz) and b must be a single line with N elements.</p>
 <p>Arthur Ferraz</p>
 <p>to send your feedback, contact me on
