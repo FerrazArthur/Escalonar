@@ -101,7 +101,8 @@ def main():
             n =  1/A[i][x]
             A = MultiplyLine(A, b, n, i)
             printar(A, b)
-            print("Valor da linha "+str(i+1)+" e coluna "+str(x+1)+" foi multiplicada pelo seu inverso")
+            #print("Valor da linha "+str(i+1)+" e coluna "+str(x+1)+" foi multiplicada pelo seu inverso")
+            print("Valores da linha "+str(i+1)+" foram multiplicados pelo inverso do  valor na coluna "+str(x+1))
             redo = confirmar()
         if op == 3:
             printar(A, b)
