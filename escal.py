@@ -125,7 +125,7 @@ def main():
             z = 0
             i=selectLine(A,"Selecione a linha que deseja zerar:")
             x=selectLine(A,"Selecione a linha do pivô:")
-            while z < len(A) and A[x][z] != 1:#procurando por posição do pivô
+            while z < len(A) and abs(A[x][z]-1) > 0.0001:#procurando por posição do pivô
                 z += 1
             if z == len(A):
                 print("Não há pivô(precisa ser 1)")
@@ -133,7 +133,7 @@ def main():
             n = -1*A[i][z]
             A = SumLines(A, b, n, i, x)
             printar(A, b, X)
-            print("Os elementos da linha "+str(i+1)+" fram substraidos pelo valor que havia na linha "+str(i+1)+" e coluna "+str(z+1))
+            print("Os elementos da linha "+str(i+1)+" foram substraidos pelo valor que havia na linha "+str(i+1)+" e coluna "+str(z+1))
             redo = confirmar()
         if op == 5:
             printar(A, b, X)
