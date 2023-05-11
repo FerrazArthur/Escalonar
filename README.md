@@ -1,13 +1,18 @@
-### Fell free to use as you want and to send me your feedback! 
+# Matrix Scaling Tool: Step-by-Step Operations for Precise Control
+ 
 
-## INTRODUCTION
+### INTRODUCTION
 
-<p>Do you ever had to make or correct an matrix scaling process by hand, just to notice some mistake in the process and wished you have a program that, in addition to show you the scaled system, you could also see the step-by-step process? what if you could had total control over the process? That's this project's intention!</p>
-<p>With this algorithm, you'll be able to swap collumns, multiply lines by a scalar, swap lines or collumns and some more operations that we usually do by hand to reduce the number of steps it'll take to scale the matrix</p>
+Do you ever had to make or correct an matrix scaling process by hand, just to notice some mistake in the process and wished you have a program that, in addition to show you the scaled system, you could also see the step-by-step process? what if you could had total control over the process? That's this project's intention!
 
-## INTRODUÇÃO
-<p>Alguma vez ja precisou realizar ou corrigir uma escalonação de matriz na mão, percebeu algum erro no processo e desejou ter um programa que, além de mostrar a matriz escalonada, te mostrasse cada passo realizado? E se você tivesse total poder sobre o processo? Essa é a proposta desse projeto!</p>
-<p>Com esse algoritmo você poderá trocar colunas, multiplicar linhas por escalar, trocar linhas ou colunas e mais qualquer outra operação que geralmente fazemos na mão, para reduzir o número de passos para escalonar a matriz!</p>
+With this algorithm, you'll be able to swap collumns, multiply lines by a scalar, swap lines or collumns and some more operations that we usually do by hand to reduce the number of steps it'll take to scale the matrix
+
+## Escalonador de Matrizes com Controle de Processo Passo a Passo
+
+### INTRODUÇÃO
+Alguma vez ja precisou realizar ou corrigir uma escalonação de matriz na mão, percebeu algum erro no processo e desejou ter um programa que, além de mostrar a matriz escalonada, te mostrasse cada passo realizado? E se você tivesse total poder sobre o processo? Essa é a proposta desse projeto!
+
+Com esse algoritmo você poderá trocar colunas, multiplicar linhas por escalar, trocar linhas ou colunas e mais qualquer outra operação que geralmente fazemos na mão, para reduzir o número de passos para escalonar a matriz!
 
 ##
 
@@ -47,7 +52,10 @@
 <p>Nota: Ao utilizar a opção para trocar colunas, você também estará trocando a ordem dos coeficientes nas matrizes 'b' e 'x'</p>
 <p>Nota: Esse algoritmo é para sistemas lineares na forma 'Ax=b', Então é preciso que A seja uma matriz quadrada(NxN) e 'b' precisa ser uma matriz linha com N elementos.</p>
 
-##
-<p>to send your feedback, contact me on
-arthursnc@gmail.com</p>
-<p>Arthur Ferraz</p>
+### Fell free to use as you want and to send me your feedback! 
+
+to send your feedback, contact me on
+
+arthursnc@gmail.com
+
+Arthur Ferraz
